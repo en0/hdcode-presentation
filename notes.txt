@@ -1,0 +1,20 @@
+- Introduction
+- Why is Code Quality Important?
+  - Time, Money, Longevity
+  - Cognitive Load and Complexity
+- The power of Abstraction
+  - Encapsolation and Isolation
+  - Simplification
+  - Component Levels
+- Legibility Matters
+  - Top-to-Bottom Readability
+  - Naming and Query/Command Separation
+  - SRP and DRY
+- Test Or Bust
+  - Build for Tests First
+  - Build Fast Tests
+  - Refactoring
+- Responsibility
+  - The Boy Scout Rule
+  - Broken Windows
+  - Professionalism

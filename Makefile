@@ -1,15 +1,9 @@
-SLIDES_DIR = .
-
 clean:
 	@rm -f *.html
 
-single:
-	@docker run --rm -v $(PWD):/home/marp/app/ -e LANG=$LANG marpteam/marp-cli --html true $(deck)
+html:
+	@docker run --rm -v $(PWD):/home/marp/app/ -e LANG=$LANG marpteam/marp-cli tt-presentation.md
 
-slides:
-	$(foreach file, $(wildcard $(SLIDES_DIR)/*.md), docker run --rm -v $(PWD):/home/marp/app/ -e LANG=$LANG marpteam/marp-cli --html true $(file);)
-
-copy:
-	mkdir -p output/
-	$(foreach file, $(wildcard $(SLIDES_DIR)/*.html), rm output/$(file); mv $(file) output/;)
+dev:
+	@docker run --rm -v $(PWD):/home/marp/app/ -e LANG=$(LANG) -p 8080:8080 -p 37717:37717 marpteam/marp-cli -s .
 

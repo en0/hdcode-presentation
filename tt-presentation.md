@@ -21,7 +21,7 @@ img[alt~="center"] {
 
 - Introduction
 - The Cost of Bad Code
-- Philosophies of Clean Clode
+- Philosophies of Clean Code
 - Responsibility
 
 ---
@@ -53,7 +53,7 @@ Human author = AuthorBuilder()
 
 ## One quick thing before we begin:
 
-Lets quickly take a look at the game we will use in our examples.
+Let's quickly look at the game we will use in our examples.
 
 [Escape Room Game](https://github.com/en0/esc-game)
 
@@ -105,9 +105,9 @@ h1 {
 
 ## Developers Are Frustrated
 
-- Everyone is working hard but progress is slowing down.
+- Everyone is working hard, but progress is slowing down.
 - Simple tasks take weeks to complete and cause more bugs.
-- The complexity is exausting and burnout is frequent.
+- The complexity is exhausting, and burnout is frequent.
 
 ## Executives Are Concerned
 
@@ -161,13 +161,13 @@ class GameObject:
 1. Ensure code testability
    The code will be testable because you had to test the code to write the code.
 
-2. Provide complete test suite
+2. Provide a complete test suite
    Each method will have a test because you had to test the code to write the code.
 
 3. Reduce cognitive load
    You can focus on the current test scope.
 
-4. Reduce refactor risk
+4. Reduce the risk of refactoring
    You will have a complete and dependable set of tests.
 
 ---
@@ -455,7 +455,7 @@ Use branch `refactor-example` from the [Escape Room Game](https://github.com/en0
    Each function is short and does only one thing.
 
 1. Top to Bottom
-   Functions are immediatly defined after the first reference.
+   Define functions after the first reference.
 
 1. Function Level
    Each function stays at one level of abstraction.
@@ -500,7 +500,7 @@ class EscapeRoomGame(ABC):
    An abstraction is a contract that __unambiguously__ describes behavior.
 
 1. Complexity Isolation
-   Abstractions create boundaries. Complexity must not leak through boundaries.
+   Abstractions create boundaries. Complexity must not leak through these edges.
 
 1. Cognitive Isolation
    Abstractions let us focus on the current task without getting lost in the weeds.
@@ -525,7 +525,7 @@ computer = (
 
 The `UseComputerAction` is complex. But that complexity does not leak to the rest of the system.
 
-Consider the additional cognitive load required if the complexity of the `UseComputerAction` was expressed here.
+Consider the cognitive load required with the additional complexity of `UseComputerAction`'s details in this code.
 
 ---
 
@@ -574,7 +574,7 @@ class ActionApi(ABC):
 > The distance from the hardware at which some behavior resides.
 
 
-## But, I don't like this definition. It's missing something...
+## I'm not fond of this definition. It's missing something.
 
 ---
 
@@ -592,23 +592,23 @@ class ActionApi(ABC):
 - What things change most frequently in a system?
 - What parts of the system have little to do with business rules?
 
-## The ansewr to both questions are 
+## The answers to both questions are 
 
 - Things closer to the user.
 - Things closer to 3rd party libs.
-- Things closer to external apis.
+- Things closer to external APIs.
 
 ---
 
 # ComponentLevel.get_example()
 
 - `esc.core` Contains the "Business Rules" of the game.
-- `esc.levels` Contains the levels that a user can play.
+- `esc.levels` Contains the levels a user can play.
 - `esc.ui.console` Contains a console interface to play the game.
 
-What if Product asked us to create a GUI for our game?
+What if the Product Team asked us to create a GUI for our game?
 
-What if Product asked us to offser the game on a website?
+What if the Product Team asked us to offer the game on a website?
 
 ---
 
@@ -618,9 +618,9 @@ What if Product asked us to offser the game on a website?
 
 ― Robert C. Martin, Clean Architecture
 
-Django, Spring, NHibernate, Entity Framework. These are all implementation details and should not affect how uses cases are created or how business rules are written.
+Django, Spring, NHibernate, Entity Framework. These are implementation details and should not affect how we create use cases or how to write business rules.
 
-__Indeed, even the database on which a system is built is an implementation detail.__
+__Indeed, even the database technology is an implementation detail.__
 
 ---
 
